@@ -1,3 +1,5 @@
+
+
 # ChallengeTuxae2024  
 Cette année 2024 marque la première participation de l'ENSAE à la coupe de France de Robotique et Eurobot. Une compétition de création de robot se déplaçant sur un plateau de jeu de 3m de long et 2m de large.  
 
@@ -21,5 +23,4 @@ temps (t), nb_pas_gauche, nb_pas_droit, acc_x, acc_y, acc_z, vit_angle_x, vit_an
 
 Et en sortie on cherche à trouver :  
 x, y, $\alpha$
-
 
