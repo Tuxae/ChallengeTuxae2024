@@ -7,10 +7,10 @@ from math import pi
 from PIL import Image
 
 p.connect(p.GUI)
-offset = [0.225,0.225,0]
+offset = [0.225,0.225,0.05]
 
-# turtle = p.loadURDF("test.urdf",offset)
-turtle = p.loadURDF("turtlebot.urdf",offset)
+turtle = p.loadURDF("test.urdf",offset)
+# turtle = p.loadURDF("turtlebot.urdf",offset)
 # soccer = p.loadURDF("soccerball.urdf",offset)
 # Set the path to the directory containing your .urdf and .obj files
 # p.setAdditionalSearchPath("../Assets")
@@ -21,9 +21,8 @@ p.setTimeStep(1./240.)
 
 forward=1
 turn=0.1
-for i in range(500):
+for i in range(1000):
    p.setGravity(0,0,-10)
-   time.sleep(1./240.)
    keys = p.getKeyboardEvents()
    leftWheelVelocity=0
    rightWheelVelocity=0
@@ -39,20 +38,24 @@ for i in range(500):
       euler = p.getEulerFromQuaternion(pos_ori[1])
       alpha = euler[2]
       print(pos_ori[0], euler)
+      print(p.getJointState(turtle, 0))
+      print(p.getJointState(turtle, 1))
       # Print the acceleration of the turtle
       # print(p.getBaseVelocity(turtle))
       # Move the camera
       x, y, z = pos_ori[0]
-      distance = 0.5
-      pitch = -pi/4
-      x += distance * np.cos(alpha) * np.cos(pitch)
-      y += distance * np.sin(alpha) * np.cos(pitch)
+      hauteur = 0.15
+      pitch = -pi/5
+      distance = hauteur / np.sin(-pitch)
+      adjacent = distance / np.tan(-pitch)
+      x += adjacent * np.cos(alpha) 
+      y += adjacent * np.sin(alpha) 
       # Resume simulation
-      time.sleep(1)
+      time.sleep(0.1)
 
-      p.resetDebugVisualizerCamera(cameraDistance=distance, cameraYaw=alpha/pi*180-90, cameraPitch=pitch/pi*180, cameraTargetPosition=(x, y, z+0))
+      p.resetDebugVisualizerCamera(cameraDistance=distance, cameraYaw=alpha/pi*180-90, cameraPitch=pitch/pi*180, cameraTargetPosition=(x, y, 0))
       # get the camera image
-      time.sleep(1)
+      time.sleep(0.1)
       width, height, rgbImg, depthImg, segImg = p.getCameraImage(1080,1080, renderer=p.ER_BULLET_HARDWARE_OPENGL)
       # show the camera image
       print(len(rgbImg))
