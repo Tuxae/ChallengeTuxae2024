@@ -19,7 +19,7 @@ Le robot est également muni d'une caméra embarquée donnant des images de ce q
 
 # Comment organiser ce challenge Tuxae
 On peut simuler le robot sur pybullet. Créer un déplacement du robot sur 100 secondes et réaliser une mesure instantanée à chaque seconde {0, 1, ..., 99, 100}. On obtient alors les variables d'entrées :  
-temps (t), nb_pas_gauche, nb_pas_droit, acc_x, acc_y, acc_z, vit_angle_x, vit_angle_z, vit_angle_z, nom_image    
+temps (t), vit_x, vit_y, vit_angle_z, rot_gauche, rot_droit, nom_image    
 
 Et en sortie on cherche à trouver :  
 x, y, $\alpha$

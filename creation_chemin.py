@@ -42,7 +42,7 @@ def create_data(instructions, filename):
 
             # Les positions absolues de rotation des roues
             rot_g = p.getJointState(turtle, 0)[0]
-            rot_d = p.getJointState(turtle, 0)[1]
+            rot_d = p.getJointState(turtle, 1)[0]
 
             # La position et l'angle du robot
             pos_ori = p.getBasePositionAndOrientation(turtle)
