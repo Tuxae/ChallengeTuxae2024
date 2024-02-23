@@ -6,7 +6,7 @@ Cette année 2024 marque la première participation de l'ENSAE à la coupe de Fr
 # Introduction
 Afin d'organiser un Challenge Tuxae en lien avec des problématiques réelles, nous vous proposons d'utiliser l'informatique, les stats et le machine learning pour repérer le robot sur le plateau de jeu. C'est à dire que l'objectif est d'estimer les trois valeures $(x, y, \alpha)$ avec $x$ et $y$ les coordonnées du robot dans le plan et $\alpha$ l'orientation selon l'axe $z$ du robot (en prenant pour orientation nul l'axe $x$ et en tournant dans le sens trigonométrique).  
 
-![Schéma explicatif](RobotDifferentiel.png)
+![Schéma explicatif](Documentations/RobotDifferentiel.png)
 
 C'est un challenge à plusieurs niveaux, vous pouvez commencer avec vos connaissances de physique de Terminal en intégrant deux fois les valeurs d'accélération du robot mesurées par l'accéléromètre et vous pourrez vous retrouvez à faire de la Computer Vision afin de réaliser de la triangulation.  
 
