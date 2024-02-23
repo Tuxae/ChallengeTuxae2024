@@ -1,0 +1,205 @@
+<robot name="robot_TUXAE">
+ 	<link name="base_link">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.40 0.20 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+		<inertial>
+      		<mass value="5"/>
+      		<origin xyz="0 0 0"/>
+      		<inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+		</inertial>
+	</link>
+ 	<link name="structure_verticale">
+		<visual>
+		    <origin xyz="-0.14 0 0.05" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.02 0.05 0.1"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+		<inertial>
+      		<mass value="0.2"/>
+      		<origin xyz="0 0 0"/>
+      		<inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+		</inertial>
+	</link>
+ 	<link name="structure_horizontale">
+		<visual>
+		    <origin xyz="-0.075 0 0.09" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.15 0.15 0.02"/>
+			</geometry>
+			<material name="Cyan1">
+	       		<color rgba="0 0.9 0.9 1.0"/>
+	     	</material>
+		</visual>	
+		<inertial>
+      		<mass value="0.2"/>
+      		<origin xyz="0 0 0"/>
+      		<inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+		</inertial>
+	</link>
+
+	<link name="roue_gauche">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder radius="0.05" length="0.02"/>
+			</geometry>
+	     	<material name="Grey1">
+				<color rgba="0.9 0.9 0.9 1.0"/>
+			</material>
+	   </visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder radius="0.05" length="0.02"/>
+			</geometry>
+    	</collision>
+		<inertial>
+      		<mass value="0.1"/>
+      		<origin xyz="0 0 0"/>
+      		<inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+		</inertial>
+		<contact>
+			<lateral_friction value="1.0"/>
+			<rolling_friction value="0.0"/>
+			<stiffness value="30000"/>
+			<damping value="1000"/>
+		</contact>
+	</link>
+
+	<joint name="joint_roue_gauche" type="revolute">
+    	<parent link="base_link"/>
+    	<child link="roue_gauche"/>
+    	<origin xyz="0 0.1 0" rpy="-1.57079632679 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+	<link name="roue_droite">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder radius="0.05" length="0.02"/>
+			</geometry>
+	     	<material name="Grey1">
+				<color rgba="0.9 0.9 0.9 1.0"/>
+			</material>
+	   </visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder radius="0.05" length="0.02"/>
+			</geometry>
+    	</collision>
+		<inertial>
+      		<mass value="0.1"/>
+      		<origin xyz="0 0 0"/>
+      		<inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+		</inertial>
+		<contact>
+			<lateral_friction value="1.0"/>
+			<rolling_friction value="0.0"/>
+			<stiffness value="30000"/>
+			<damping value="1000"/>
+		</contact>
+	</link>
+
+	<joint name="joint_roue_droite" type="revolute">
+    	<parent link="base_link"/>
+    	<child link="roue_droite"/>
+    	<origin xyz="0 -0.1 0" rpy="1.57079632679 0 0"/>
+    	<axis xyz="0 0 1"/>
+    	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
+  	</joint>
+
+
+	
+	<link name="roue_libre_avant">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<sphere radius="0.02"/>
+			</geometry>
+	     	<material name="Grey1">
+				<color rgba="0.9 0.9 0.9 1.0"/>
+			</material>
+	   </visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<sphere radius="0.02"/>
+			</geometry>
+    	</collision>
+		<inertial>
+      		<mass value="0.2"/>
+      		<origin xyz="0 0 0"/>
+      		<inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+		</inertial>
+    <contact>
+      <lateral_friction value="0.0"/>
+      <rolling_friction value="0.0"/>
+      <stiffness value="30000"/>
+      <damping value="10000"/>
+    </contact>
+	</link>
+
+	<link name="roue_libre_arriere">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<sphere radius="0.02"/>
+			</geometry>
+	     	<material name="Grey1">
+				<color rgba="0.9 0.9 0.9 1.0"/>
+			</material>
+	   </visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<sphere radius="0.02"/>
+			</geometry>
+    	</collision>
+		<inertial>
+      		<mass value="0.2"/>
+      		<origin xyz="0 0 0"/>
+      		<inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
+		</inertial>
+		<contact>
+			<lateral_friction value="0.0"/>
+			<rolling_friction value="0.0"/>
+			<stiffness value="30000"/>
+			<damping value="10000"/>
+		</contact>
+	</link>
+
+ 	<joint name="joint_roue_libre_avant" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="roue_libre_avant"/>
+		<origin xyz="0.18 0 -0.025" rpy="0 0 0"/>
+	</joint>
+ 	<joint name="joint_roue_libre_arriere" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="roue_libre_arriere"/>
+		<origin xyz="-0.18 0 -0.025" rpy="0 0 0"/>
+	</joint>
+	
+
+ 	<joint name="joint_structure_verticale" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="structure_verticale"/>
+	</joint>
+ 	<joint name="joint_structure_horizontale" type="fixed">
+    	<parent link="structure_verticale"/>
+    	<child link="structure_horizontale"/>
+	</joint>
+</robot>
