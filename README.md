@@ -24,3 +24,19 @@ temps (t), vit_x, vit_y, vit_angle_z, rot_gauche, rot_droit, nom_image
 Et en sortie on cherche à trouver :  
 x, y, $\alpha$
 
+
+# Message
+[Tuxae][Challenge2024]
+
+Bonjour à tous,
+
+Nous espérons que vous avez passé de bonnes vacances ! Pour reprendre en douceur, nous lancons le Challenge Tuxae 2024. Le défi est disponible sur Kaggle en suivant ce lien : https://www.kaggle.com/competitions/challenge-tuxae-2024
+
+L'objectif est d'estimer les coordonnées et l'orientation d'un robot à partir de données provenant de capteurs embarquées et de photos prises par le robot. Vous avez jusqu'au mercredi 13 mars pour soumettre vos prédictions. Les étudiants ENSAE sur le podium seront récompensés par des lots incroyables.
+
+Bon courage à tous.
+
+
+C'est également l'occasion de parler, pour les 1A et 2AD, de la passation Tuxae, l'association d'informatique et de robotique de l'école. Nous organisons des ateliers et des défis autour du monde informatique pour les étudiants de l'ENSAE. Si vous êtes intéressé pour rejoindre l'association ou simplement pour en savoir plus, n'hésitez pas à me contacter.
+
+
